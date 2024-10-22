@@ -1,0 +1,84 @@
+Tool:
+1. VS Code
+2. Node
+
+Languages: HTML, CSS, JavaScript, TypeScript
+Framework: Angular
+API: RapidAPI.com
+
+Open cmd and install : npm install -g @angular/cli
+Then - npm config get prefix
+
+This will return a path like:
+C:\Users\YourUsername\AppData\Roaming\npm
+Step 2: Add the Path to Environment Variables
+1.	Open System Environment Variables:
+o	Press Windows + X and select System.
+o	On the left side, click Advanced system settings.
+o	In the System Properties window, click Environment Variables.
+2.	Edit the Path:
+o	In the Environment Variables window, under System variables or User variables, find and select the Path variable, then click Edit.
+o	In the Edit Environment Variable dialog, click New, and paste the path you got from the npm config get prefix command (e.g., C:\Users\YourUsername\AppData\Roaming\npm).
+3.	Save and Restart:
+o	Click OK to close all dialog boxes.
+o	Restart your terminal or command prompt to apply the changes.
+Step 3: Verify the Installation
+After updating the PATH and restarting the terminal, run:
+ng --version
+
+open cmd: ng new weatherapp
+y
+css
+y
+
+
+################################################# PROJECT STRUCTURE ################################################################
+reference design : htmldesignstructure.png
+for icons : flaticon.com, freepik.com
+for fonts : fontawesome
+
+rapidapi.com : weather api dojo
+
+key: 5a36051175msh1d2430dca2a474dp19f608jsnfa47ab5c456d 
+
+######################################################## html components ########################################################
+created a container weather-container
+created two div class : left and right container inside div class app container.
+added the styling in app.css and also some global style in style.css.
+now, in terminal we will create two component for left and right container. 
+open terminal : ng generate component left-container, ng generate right-container
+###############################################################################################3
+week will be by default shown after loading the page and degree Celsius will be shown.
+used font awesome angular for fonts .(on terminal : npm install @fortawesome/fontawesome-svg-core, then: npm install @fortawesome/free-solid-svg-icons, then : npm install @fortawesome/angular-fontawesome)
+
+##############################################################################################################3
+open new terminal: ng generate service service/weather
+
+###############################################################################################################
+rapiapi : dojo api(weather) : 
+(1) : locations/search : params : query : Mumbai : (copy and paste : lat - 19.078 , long - 72.879) ,
+(2) : weather/forecast : param :paste the lat and long
+####################################################################################################
+inside app, create a folder named Model. also, rename service to Services.
+go to location/search : results : copy it.
+type json formatter: paste above copied and copy the result.
+search json to typescript : paste the above and copy the result.
+now in model folder : create a file LocationDetails.ts and paste the above. also change root to LocationDetails. 
+################################################################################################
+now do same for weather/forecast
+##############################################################################################
+create again a file called TemperatureData.ts and write export interface TemperatureData{
+    
+}
+################################################################################################
+same way, create a file : TodaysHighlight 
+ 
+
+
+
+ 
+
+
+
+
+
