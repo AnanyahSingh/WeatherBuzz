@@ -28,7 +28,30 @@
             
         </div>
         <div class="right-container-todays-highlight">
+            <div class="todays-highlight-header">
             <div class="right-container-todays-highlight-title">Today's Highlight</div>
+            <div class="recommendation-dropdown">
+                <select (change)="onWeatherChange($event)">
+                    <option value="">Select Weather</option>
+                    <option value="sunny">Sunny</option>
+                    <option value="cloudy">Cloudy</option>
+                    <option value="windy">Windy</option>
+                    <option value="rainy">Rainy</option>
+                </select>
+            </div>
+        
+            <!-- Dialog Component -->
+            <div class="dialog" *ngIf="isDialogOpen" (click)="closeDialog()">
+                <div class="dialog-content" (click)="$event.stopPropagation()">
+                    <h2>{{ selectedWeather | titlecase }} Recommendations</h2>
+                    <ul>
+                        <li *ngFor="let tip of getRecommendations(selectedWeather)">{{ tip }}</li>
+                    </ul>
+                    <button (click)="closeDialog()">Close</button>
+                </div>
+            </div>
+            </div>
+        
             <div class="right-container-todays-highlight-cards">
             <div class="right-container-todays-highlight-card">
                 <div class="right-container-todays-highlight-card-title">UV Index</div>

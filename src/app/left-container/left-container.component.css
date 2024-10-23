@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative; /* Added to allow absolute positioning of children */
 
 }
 
@@ -60,6 +61,7 @@
     margin-left: 30px;
     margin-right: 30px;
     flex-direction: column;
+    padding-bottom: 60px; /* Add padding to create space for the button */
 }
 
 /* temperature data: image, value and day-time*/
@@ -165,4 +167,88 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
+}
+
+/* Overlay style */
+.feedback-overlay {
+    position: fixed; /* Fullscreen overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 999; /* Ensure it is above all other elements */
+}
+
+.feedback-button {
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+    background-color: #e69350;
+    color: #fff;
+    padding: 2px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: large;
+  }
+  
+  /* Feedback Form Popup Style */
+.feedback-form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the form */
+    background-color: #d17f1e;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the form is above the overlay */
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Max width */
+}
+  
+.feedback-form-popup h2 {
+    margin-top: 0;
+}
+  
+.feedback-form-popup form {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.feedback-form-popup label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.feedback-form-popup input,
+.feedback-form-popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #8290cf;
+}
+  
+.feedback-form-popup button[type="submit"] {
+    background-color: #05154b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.feedback-form-popup button[type="submit"]:hover {
+    background-color: #05154b;
+}
+  
+.feedback-form-popup button[type="button"] {
+    background-color: #fff;
+    color: #05154b;
+    padding: 10px 20px;
+    border: 1px solid #05154b;
+    border-radius: 5px;
+    cursor: pointer;
 }
