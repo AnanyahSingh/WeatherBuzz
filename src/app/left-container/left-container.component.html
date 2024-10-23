@@ -25,6 +25,32 @@
                 <div class="left-container-location-img"><img src="./../../assets/city.jpeg" alt=""></div>
                 <div class="left-container-location-name">{{this.weatherService.temperatureData.location}}</div>
             </div>
+            
         </div>
+
+        <!-- Feedback Button -->
+        <div class="feedback-button" (click)="openFeedbackForm()">Feedback</div>
+
+        <!-- Overlay for the form -->
+        <div class="feedback-overlay" *ngIf="showFeedbackForm" (click)="closeFeedbackForm()"></div>
+
+        <!-- Feedback Form -->
+        <div class="feedback-form-popup" *ngIf="showFeedbackForm">
+            <h2>Feedback Form</h2>
+            <form (ngSubmit)="submitFeedback()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" [(ngModel)]="feedbackName" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="feedbackEmail" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" [(ngModel)]="feedbackMessage" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <button (click)="closeFeedbackForm()">Close</button>
+        </div>
+
     </div>
 </div>

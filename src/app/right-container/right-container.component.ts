@@ -15,6 +15,8 @@ templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.css'
 })
 export class RightContainerComponent {
+  isDialogOpen = false;
+  selectedWeather: string = '';
 
   constructor(public weatherService : WeatherService){};
 
@@ -50,4 +52,28 @@ export class RightContainerComponent {
     this.weatherService.fahrenhiet = true;
     this.weatherService.celsius = false;
   }
+
+  onWeatherChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedWeather = selectElement.value;
+    if (this.selectedWeather) {
+      this.isDialogOpen = true;
+    }
+  }
+
+  getRecommendations(weather: string): string[] {
+    const recommendations = {
+      sunny: ['Dont forget your sunscreen', 'Carry your cap', 'Wear sunglasses', 'Stay hydrated'],
+      cloudy: ['Take a light jacket', 'Prepare for possible rain'],
+      windy: ['Wear a windbreaker', 'Secure loose items', 'Tight your things tightly', 'Hairs should be tied'],
+      rainy: ['Carry an umbrella', 'Wear waterproof shoes', 'Time for your raincoat'],
+    };
+    return recommendations[weather] || [];
+  }
+
+  closeDialog() {
+    this.isDialogOpen = false;
+    this.selectedWeather = '';
+  }
+
 }
