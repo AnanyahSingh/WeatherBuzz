@@ -1,4 +1,5 @@
-**# WeatherBuzz**
+**# WeatherBuzz  🌦️**
+
 **📙About:** It is a weather forecasting webapp generated with [Angular CLI](https://github.com/angular/angular-cli). It allows users to fetch the current weather data of any city along with a seven day weekly forecast and an hourly forecast. It shows the temperature in both the metrics : Celsius and Fahrenheit. 
 
 **📌Features:** 
